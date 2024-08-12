@@ -1,0 +1,760 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&family=Rubik:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!--Start topbar-->
+<div class="nav">
+    <div class="container">
+
+      <a class="nav-link float-start" href="#">Home Improvement Deals | Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+
+      <a class="nav-link float-end" href="#">Free Shipping Over $35*</a>
+
+      <a class="nav-link float-end" href="#">Wayfair Professional</a>
+
+      <a class="nav-link float-end" href="{% url 'App' %}">Our App</a>
+
+    </div>
+</div>
+
+<!--End topbar-->
+
+<!--Start Navbar-->
+
+<nav class="navbar navbar-expand-lg pt-0 pb-0 sticky-top">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <a class="nav-link mt-4 disappearing-element" href="#" onclick="openNav()"><i class="fa-solid fa-bars fa-xl"></i></i> Menu</a>
+      <a class="nav-link" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0 ">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user fa-xl"></i> Account
+          </a> 
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="{% url 'login' %}" class="btn mybtn" type="button">Sign In</a>
+              <a href="{% url 'login' %}" class="nav-link px-auto mx-0">Creat an Account</a>
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> My Account </a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-box-open"></i> My Orders</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list"></i> Lists</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping fa-xl"></i> Cart</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!--End Navbar-->
+
+<!--Start Side Panal-->
+<div id="mySidepanel" class="sidepanel">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="logo" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+
+ <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-chair"></i> Departments</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-tag"></i> sale</a>
+  <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-user"></i> My Account</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-box-open"></i> My Orders </a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-comment-dots"></i> Review My Purchases</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-clock-rotate-left"></i> Recently Viewed</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-heart"></i> Lists</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-shapes"></i> Design Services</a>
+  <a href="{% url 'shop' %}"><i class="fa-brands fa-unity"></i> 3D Room Planner</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-credit-card"></i> Wayfair Credit Cards</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-hand-holding-dollar"></i> Wayfair Financing</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-gift"></i> Gift Card</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-user-tie"></i> Wayfair Professional</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-info"></i> Help & Contact</a>
+  <div class="d-grid gap-2 col-10 mx-auto">
+    <a href="login.html" class="btn btn-primary" type="button">Sign In</a>
+  </div>
+</div>
+<!--End Side Panal-->
+<div><hr></div>
+<!--Start Departments-->
+<div class="nav1 navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-center">
+    <a class="nav-link float-start" href="{% url 'shop' %}">Furniture</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Outdoor</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Bedding & Bath</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Rugs</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Decor & Pillows</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Organization</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">ligting</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Kitchen</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Baby & Kids</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Home Improvement</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Appliances</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Pet</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Holiday</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Shop by Room</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}" style="color: red;">Sale</a>
+</div>
+</div>
+<!--End Departments-->
+
+<div><hr></div>
+
+<!--Start Section 1-->
+<div class="sec1 mt-5 mb-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 pb-3 pt-2">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="{% url 'shop' %}"><img src="{% static 'imgs/sec1-1.png' %}" alt="#" class="img-fluid"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="{% url 'shop' %}"><img src="{% static 'imgs/sec1-4.png' %}" alt="#" class="img-fluid"></a>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="row mycard pb-2 pt-2"><a href="{% url 'shop' %}"><img src="{% static 'imgs/sec1-2.png' %}" alt="" class="img-fluid"></a></div>
+        <div class="row mycard pb-2 pt-2"><a href="{% url 'shop' %}"><img src="{% static 'imgs/sec1-3.png' %}" alt="" class="img-fluid"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--End Section 1-->
+
+
+<!--Start Section 2-->
+
+<div class="container mt-5 mb-5">
+<div class="row">
+  <div class="col-md-4 mycard mb-3 pb-2 pt-2">
+      <a href="{% url 'shop' %}">
+          <img src="{% static 'imgs/sec2-1.webp' %}" alt="Image 1" class="img-fluid">
+      </a>
+  </div>
+  <div class="col-md-4 mycard mb-3 pb-2 pt-2">
+      <a href="{% url 'shop' %}">
+          <img src="{% static 'imgs/sec2-2.webp' %}" alt="Image 2" class="img-fluid">
+      </a>
+  </div>
+  <div class="col-md-4 mycard mb-3 pb-2 pt-2">
+      <a href="{% url 'shop' %}">
+          <img src="{% static 'imgs/sec2-3.webp' %}" alt="Image 3" class="img-fluid">
+      </a>
+  </div>
+</div>
+</div>
+
+<!--End Section 2-->
+
+
+<!--Start Section 3-->
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 mycard px-0">
+        <a href="#">
+            <img src="{% static 'imgs/sec3.webp' %}" alt="Image 1" class="img-fluid">
+        </a>
+    </div>
+    
+  </div>
+  </div>
+  
+<!--End Section 3-->
+
+
+<!--Start Section 4-->
+
+<div class="container mt-5 sec4">
+  <h1 class="text-center mt-5 mb-5">Shop by Department</h1>
+  <div class="row mb-4">
+      <div class="col-md-2">
+          <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+              <img src="{% static 'imgs/sec4-1.webp' %}" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                  <h5 class="card-title">Sale</h5>
+              </div>
+            </a>
+      </div>
+      <div class="col-md-2">
+        <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+            <img src="{% static 'imgs/sec4-2.webp' %}" class="card-img-top" alt="Image 1">
+            <div class="card-body">
+                <h5 class="card-title">Furniture</h5>
+            </div>
+          </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-3.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Outdoor</h5>
+          </div>
+        </a>
+  </div>
+  <div class="col-md-2">
+    <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+        <img src="{% static 'imgs/sec4-4.webp' %}" class="card-img-top" alt="Image 1">
+        <div class="card-body">
+            <h5 class="card-title">Bedding & Bath</h5>
+        </div>
+      </a>
+</div>
+<div class="col-md-2">
+  <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+      <img src="{% static 'imgs/sec4-5.webp' %}" class="card-img-top" alt="Image 1">
+      <div class="card-body">
+          <h5 class="card-title">Decore & Pillows</h5>
+      </div>
+    </a>
+</div>
+<div class="col-md-2">
+  <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+      <img src="{% static 'imgs/sec4-6.webp' %}" class="card-img-top" alt="Image 1">
+      <div class="card-body">
+          <h5 class="card-title">Rugs</h5>
+      </div>
+    </a>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-7.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Lighting</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-8.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Home Improvement</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-9.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Appliances</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-10.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Kitchen</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-11.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Baby & Kids</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+      <a href="{% url 'shop' %}" class="card text-center mycard border-0">
+          <img src="{% static 'imgs/sec4-12.webp' %}" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+              <h5 class="card-title">Organization</h5>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>
+
+<!--End Section 4-->
+
+
+
+<!--Start Section 5-->
+
+<div class="container text-center mt-5 sec5-head">
+  <h2>Level Up Your Living Room</h2>
+  <a href="{% url 'shop' %}">Shop Furniture & Decor</a>
+</div>
+
+<div class="container mt-5 sec5">
+  <div class="row">
+      <div class="col-md-3 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec5-1.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Sectionals & Sofas</h5>
+                      <p class="card-text">All the comfort - for so much less.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec5-2.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">End Tables</h5>
+                      <p class="card-text">Functionality, But make it cut.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec5-3.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Accent Chairs</h5>
+                      <p class="card-text">Tons of options for anuy corner or nook.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec5-4.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Coffee Tables</h5>
+                      <p class="card-text">Meet your use-it-for-everything table.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  </div>
+</div>
+  
+<!--End Section 5-->
+
+<!--Start Section 6-->
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 mycard pt-1 pb-1 ps-1 pe-1">
+        <a href="{% url 'shop' %}">
+            <img src="{% static 'imgs/sec6.png' %}" alt="Image 1" class="img-fluid">
+        </a>
+    </div>
+    
+  </div>
+  </div>
+  
+<!--End Section 6-->
+
+
+<!--Start Section 7-->
+
+<div class="container text-center mt-5 sec5-head">
+  <h2>Explore our Exclusive Brands</h2>
+  <p>Bring your vision to life with hand-curated collections, priced just right.</p>
+  <a href="{% url 'shop' %}">Shop All</a>
+</div>
+
+<div class="container mt-5 sec5">
+  <div class="row">
+      <div class="col-md-2 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec7-1.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+
+                      <p class="card-text">All the comfort - for so much less.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-2 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec7-2.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+
+                      <p class="card-text">Functionality, But make it cut.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-2 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec7-3.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+
+                      <p class="card-text">Tons of options for anuy corner or nook.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-2 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec7-4.webp' %}" class="card-img-top" alt="Image 1">
+                  <div class="card-body text-center">
+
+                      <p class="card-text">Meet your use-it-for-everything table.</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-2 mb-4 mycard">
+        <a href="{% url 'shop' %}">
+            <div class="card border-0">
+                <img src="{% static 'imgs/sec7-5.webp' %}" class="card-img-top" alt="Image 1">
+                <div class="card-body text-center">
+
+                    <p class="card-text">Meet your use-it-for-everything table.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 mb-4 mycard">
+      <a href="{% url 'shop' %}">
+          <div class="card border-0">
+              <img src="{% static 'imgs/sec7-6.webp' %}" class="card-img-top" alt="Image 1">
+              <div class="card-body text-center">
+
+                  <p class="card-text">Meet your use-it-for-everything table.</p>
+              </div>
+          </div>
+      </a>
+  </div>
+  </div>
+</div>
+  
+<!--End Section 7-->
+
+
+
+<!--Start Section 8-->
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 mycard pt-1 pb-1 ps-1 pe-1">
+        <a href="{% url 'shop' %}">
+            <img src="{% static 'imgs/sec8.webp' %}" alt="Image 1" class="img-fluid">
+        </a>
+    </div>
+    
+  </div>
+  </div>
+  
+<!--End Section 8-->
+
+
+
+<!--Start Section 9-->
+
+<div class="container text-center mt-5 sec5-head">
+  <h1>Three Different Ways to Save</h1>
+</div>
+
+<div class="container mt-3 sec5">
+  <div class="row">
+      <div class="col-md-4 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec9-1.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h4 class="card-title">The Surplus Sale</h4>
+                      <p class="card-text">Deals so good, they feel like a mistake →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-4 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec9-2.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h4 class="card-title">Closeout Deals</h4>
+                      <p class="card-text">Save on discontinued products before they disappear →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-4 mb-4 mycard">
+          <a href="{% url 'shop' %}">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec9-3.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h4 class="card-title">Open Box Deals</h4>
+                      <p class="card-text">Their return, your reward! Shop like-new items for less →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  </div>
+</div>
+  
+<!--End Section 9-->
+
+
+<!--Start Section 10-->
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 mycard pt-1 pb-1 ps-1 pe-1">
+        <a href="#">
+            <img src="{% static 'imgs/sec10.webp' %}" alt="Image 1" class="img-fluid">
+        </a>
+    </div>
+    
+  </div>
+  </div>
+  
+<!--End Section 10-->
+
+
+
+<!--Start Section 11-->
+
+<div class="container text-center mt-5 sec5-head">
+  <h1>What We're Doing to Make an Impact</h1>
+</div>
+
+<div class="container mt-3 sec5">
+  <div class="row">
+      <div class="col-md-4 mb-4 mycard">
+          <a href="#">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec11-1.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Contributing to All the Homes We Share</h5>
+                      <p class="card-text">Learn more about our DEI, Social Impact, and Sustainability Work →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-4 mb-4 mycard">
+          <a href="#">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec11-2.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Building Supplier Diversity</h5>
+                      <p class="card-text">Learn more about the creators behind the businesses →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-4 mb-4 mycard">
+          <a href="#">
+              <div class="card border-0">
+                  <img src="{% static 'imgs/sec11-3.webp' %}" class="card-img-top pt-2" alt="Image 1">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">All Things Home, Sustainably</h5>
+                      <p class="card-text">Discover so many (easy!) ways to live more sustainably →</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  </div>
+</div>
+  
+<!--End Section 11-->
+
+
+
+<!--Start Section 12-->
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 mycard pt-1 pb-1 ps-1 pe-1">
+        <a href="{% url 'shop' %}">
+            <img src="{% static 'imgs/sec12.webp' %}" alt="Image 1" class="img-fluid">
+        </a>
+    </div>
+    
+  </div>
+  </div>
+  
+<!--End Section 12-->
+
+
+<!--Start Section 13-->
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <img src="{% static 'imgs/sec13-1.webp' %}" alt="Icon 1" class="img-fluid">
+        <h4>Unbeatable Selection</h4>
+        <p>All things home, all in one place.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'imgs/sec13-2.webp' %}" alt="Icon 2" class="img-fluid">
+        <h4>Expert Customer Service</h4>
+        <p>Our friendly team's on hand seven days a week.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'imgs/sec13-3.webp' %}" alt="Icon 3" class="img-fluid">
+        <h5>Fast & Free Shipping Over $35*</h5>
+        <p>Plus, two-day delivery on thousands of items.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'imgs/sec13-4.webp' %}" alt="Icon 4" class="img-fluid">
+        <h4>Amazing Value Every Day</h4>
+        <p>Items you love at prices that fit your budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!--End Section 13-->
+
+
+<div style="height: 250px;"></div>
+
+
+
+
+<!--Start Footer-->
+
+    <!--Start App banner-->
+
+    <div class="mt-5 mb-5">
+      <div class="row">
+          <div class="col-12">
+              <a href="#">
+                  <img src="{% static 'imgs/banner-app.webp' %}" alt="Image 1" class="img-fluid">
+              </a>
+          </div>
+
+      </div>
+  </div>
+
+  <!--End App Banner-->
+
+
+  <!--Start Subscribe-->
+
+  <div class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <div class="text-center pt-2">
+                  Be the first to know about our best deals!
+              </div>
+          </div>
+          <div class="col-md-5">
+              <div class="d-flex w-100 ">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn mybtn" type="button">Subscribe</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!--End Subscripe-->
+
+
+  <footer class="py-5">
+      <div class="container border-top pt-5">
+          <div class="row">
+              <div class="col-md-4">
+                  <h4>About Us</h4>
+                  <a href="#" class="mylink">About Wayfair</a><br>
+                  <a href="#" class="mylink">Wayfair Professional</a><br>
+                  <a href="#" class="mylink">Gift Cards</a><br>
+                  <a href="#" class="mylink">Wayfair Credit Cards</a><br>
+                  <a href="#" class="mylink">Wayfair Financing</a><br>
+                  <a href="#" class="mylink">Careers</a><br>
+                  <a href="#" class="mylink">Sell on Wayfair</a><br>
+                  <a href="#" class="mylink">Investor Relation</a><br>
+                  <a href="#" class="mylink">Advertise with Us</a><br>
+                  <a href="#" class="mylink">Locations</a>
+              </div>
+              <div class="col-md-4">
+                  <h4>Customer Service</h4>
+                  <a href="#" class="mylink">My Orders</a><br>
+                  <a href="#" class="mylink">My Account</a><br>
+                  <a href="#" class="mylink">Track My Order</a><br>
+                  <a href="#" class="mylink">Wayfair Accessibilty Statement</a><br>
+                  <a href="#" class="mylink">Return Policy</a><br>
+                  <a href="#" class="mylink">Help Center</a><br>
+                  <a href="#" class="mylink">Product Recalls</a>
+              </div>
+              <div class="col-md-4">
+                  <h4>Contact Us</h4>
+                  <button type="button" class="btn mybtn">Quick Service</button>
+              </div>
+          </div>
+
+          <div class="d-flex justify-content-between py-4 my-4 border-top">
+              <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+              <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+              </ul>
+          </div>
+  </footer>
+
+
+  <!--End Footer-->
+
+  <!--JS Files-->
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/all.min.js' %}"></script>
+  <script src="{% static 'js/myjs.js' %}"></script>
+
+  <!--JS Files-->
+</body>
+
+</html>

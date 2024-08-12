@@ -1,0 +1,447 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&family=Rubik:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!--Start topbar-->
+<div class="nav">
+    <div class="container">
+
+      <a class="nav-link float-start" href="#">Home Improvement Deals | Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+
+      <a class="nav-link float-end" href="#">Free Shipping Over $35*</a>
+
+      <a class="nav-link float-end" href="#">Wayfair Professional</a>
+
+      <a class="nav-link float-end" href="{% url 'App' %}">Our App</a>
+
+    </div>
+</div>
+
+<!--End topbar-->
+
+<!--Start Navbar-->
+
+<nav class="navbar navbar-expand-lg pt-0 pb-0 sticky-top">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <a class="nav-link mt-4 disappearing-element" href="#" onclick="openNav()"><i class="fa-solid fa-bars fa-xl"></i></i> Menu</a>
+      <a class="nav-link" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0 ">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user fa-xl"></i> Account
+          </a> 
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="{% url 'login' %}" class="btn mybtn" type="button">Sign In</a>
+              <a href="{% url 'login' %}" class="nav-link px-auto mx-0">Creat an Account</a>
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> My Account </a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-box-open"></i> My Orders</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list"></i> Lists</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping fa-xl"></i> Cart</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!--End Navbar-->
+
+<!--Start Side Panal-->
+<div id="mySidepanel" class="sidepanel">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="logo" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+
+ <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-chair"></i> Departments</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-tag"></i> sale</a>
+  <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-user"></i> My Account</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-box-open"></i> My Orders </a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-comment-dots"></i> Review My Purchases</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-clock-rotate-left"></i> Recently Viewed</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-heart"></i> Lists</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-shapes"></i> Design Services</a>
+  <a href="{% url 'shop' %}"><i class="fa-brands fa-unity"></i> 3D Room Planner</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-credit-card"></i> Wayfair Credit Cards</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-hand-holding-dollar"></i> Wayfair Financing</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-gift"></i> Gift Card</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-user-tie"></i> Wayfair Professional</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-info"></i> Help & Contact</a>
+  <div class="d-grid gap-2 col-10 mx-auto">
+    <a href="login.html" class="btn btn-primary" type="button">Sign In</a>
+  </div>
+</div>
+<!--End Side Panal-->
+<div><hr></div>
+<!--Start Departments-->
+<div class="nav1 navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-center">
+    <a class="nav-link float-start" href="{% url 'shop' %}">Furniture</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Outdoor</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Bedding & Bath</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Rugs</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Decor & Pillows</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Organization</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">ligting</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Kitchen</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Baby & Kids</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Home Improvement</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Appliances</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Pet</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Holiday</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Shop by Room</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}" style="color: red;">Sale</a>
+</div>
+</div>
+<!--End Departments-->
+
+    <div>
+        <hr>
+    </div>
+
+
+
+
+    <!--Start Cart-->
+
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Your cart</span>
+              <span class="badge badge-secondary badge-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">2 - Eidson 10 Drawer Storage Drawer</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$70</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Comforter Set</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$240</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Ainsley 73.6'' Vegan Leather Sofa</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$260</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                  <h6 class="my-0">Promo code</h6>
+                  <small>EXAMPLECODE</small>
+                </div>
+                <span class="text-success">-$120</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$470</strong>
+              </li>
+            </ul>
+      
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Promo code">
+                <div class="input-group-append">
+                  <button type="submit" class="btn mybtn">Redeem</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Billing address</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="username">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="username" placeholder="Username" required>
+                  <div class="invalid-feedback" style="width: 100%;">
+                    Your username is required.
+                  </div>
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+              </div>
+      
+              <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="country">Country</label>
+                  <select class="custom-select d-block w-100" id="country" required>
+                    <option value="">Choose...</option>
+                    <option>United States</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="state">State</label>
+                  <select class="custom-select d-block w-100" id="state" required>
+                    <option value="">Choose...</option>
+                    <option>California</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="zip">Zip</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="same-address">
+                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save-info">
+                <label class="custom-control-label" for="save-info">Save this information for next time</label>
+              </div>
+              <hr class="mb-4">
+      
+              <h4 class="mb-3">Payment</h4>
+      
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                  <label class="custom-control-label" for="credit">Credit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="debit">Debit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="paypal">PayPal</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Name on card</label>
+                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <small class="text-muted">Full name as displayed on card</small>
+                  <div class="invalid-feedback">
+                    Name on card is required
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Credit card number</label>
+                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Expiration</label>
+                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Expiration date required
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-cvv">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Security code required
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <button class="btn mybtn btn-lg btn-block" type="submit">Continue to checkout</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!--End Cart-->
+
+
+
+
+    <!--Start Footer-->
+
+    <!--Start App banner-->
+
+    <div class="mt-5 mb-5">
+      <div class="row">
+          <div class="col-12">
+              <a href="#">
+                  <img src="{% static 'imgs/banner-app.webp' %}" alt="Image 1" class="img-fluid">
+              </a>
+          </div>
+
+      </div>
+  </div>
+
+  <!--End App Banner-->
+
+
+  <!--Start Subscribe-->
+
+  <div class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <div class="text-center pt-2">
+                  Be the first to know about our best deals!
+              </div>
+          </div>
+          <div class="col-md-5">
+              <div class="d-flex w-100 ">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn mybtn" type="button">Subscribe</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!--End Subscripe-->
+
+
+  <footer class="py-5">
+      <div class="container border-top pt-5">
+          <div class="row">
+              <div class="col-md-4">
+                  <h4>About Us</h4>
+                  <a href="#" class="mylink">About Wayfair</a><br>
+                  <a href="#" class="mylink">Wayfair Professional</a><br>
+                  <a href="#" class="mylink">Gift Cards</a><br>
+                  <a href="#" class="mylink">Wayfair Credit Cards</a><br>
+                  <a href="#" class="mylink">Wayfair Financing</a><br>
+                  <a href="#" class="mylink">Careers</a><br>
+                  <a href="#" class="mylink">Sell on Wayfair</a><br>
+                  <a href="#" class="mylink">Investor Relation</a><br>
+                  <a href="#" class="mylink">Advertise with Us</a><br>
+                  <a href="#" class="mylink">Locations</a>
+              </div>
+              <div class="col-md-4">
+                  <h4>Customer Service</h4>
+                  <a href="#" class="mylink">My Orders</a><br>
+                  <a href="#" class="mylink">My Account</a><br>
+                  <a href="#" class="mylink">Track My Order</a><br>
+                  <a href="#" class="mylink">Wayfair Accessibilty Statement</a><br>
+                  <a href="#" class="mylink">Return Policy</a><br>
+                  <a href="#" class="mylink">Help Center</a><br>
+                  <a href="#" class="mylink">Product Recalls</a>
+              </div>
+              <div class="col-md-4">
+                  <h4>Contact Us</h4>
+                  <button type="button" class="btn mybtn">Quick Service</button>
+              </div>
+          </div>
+
+          <div class="d-flex justify-content-between py-4 my-4 border-top">
+              <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+              <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+              </ul>
+          </div>
+  </footer>
+
+
+  <!--End Footer-->
+
+  <!--JS Files-->
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/all.min.js' %}"></script>
+  <script src="{% static 'js/myjs.js' %}"></script>
+
+  <!--JS Files-->
+</body>
+
+</html>

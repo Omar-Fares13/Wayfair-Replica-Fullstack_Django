@@ -1,0 +1,536 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&family=Rubik:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!--Start topbar-->
+<div class="nav">
+    <div class="container">
+
+      <a class="nav-link float-start" href="#">Home Improvement Deals | Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+
+      <a class="nav-link float-end" href="#">Free Shipping Over $35*</a>
+
+      <a class="nav-link float-end" href="#">Wayfair Professional</a>
+
+      <a class="nav-link float-end" href="{% url 'App' %}">Our App</a>
+
+    </div>
+</div>
+
+<!--End topbar-->
+
+<!--Start Navbar-->
+
+<nav class="navbar navbar-expand-lg pt-0 pb-0 sticky-top">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <a class="nav-link mt-4 disappearing-element" href="#" onclick="openNav()"><i class="fa-solid fa-bars fa-xl"></i></i> Menu</a>
+      <a class="nav-link" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0 ">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user fa-xl"></i> Account
+          </a> 
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="{% url 'login' %}" class="btn mybtn" type="button">Sign In</a>
+              <a href="{% url 'login' %}" class="nav-link px-auto mx-0">Creat an Account</a>
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> My Account </a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-box-open"></i> My Orders</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list"></i> Lists</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping fa-xl"></i> Cart</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!--End Navbar-->
+
+<!--Start Side Panal-->
+<div id="mySidepanel" class="sidepanel">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="logo" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+
+ <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-chair"></i> Departments</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-tag"></i> sale</a>
+  <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-user"></i> My Account</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-box-open"></i> My Orders </a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-comment-dots"></i> Review My Purchases</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-clock-rotate-left"></i> Recently Viewed</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-heart"></i> Lists</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-shapes"></i> Design Services</a>
+  <a href="{% url 'shop' %}"><i class="fa-brands fa-unity"></i> 3D Room Planner</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-credit-card"></i> Wayfair Credit Cards</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-hand-holding-dollar"></i> Wayfair Financing</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-gift"></i> Gift Card</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-user-tie"></i> Wayfair Professional</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-info"></i> Help & Contact</a>
+  <div class="d-grid gap-2 col-10 mx-auto">
+    <a href="login.html" class="btn btn-primary" type="button">Sign In</a>
+  </div>
+</div>
+<!--End Side Panal-->
+<div><hr></div>
+<!--Start Departments-->
+<div class="nav1 navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-center">
+    <a class="nav-link float-start" href="{% url 'shop' %}">Furniture</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Outdoor</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Bedding & Bath</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Rugs</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Decor & Pillows</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Organization</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">ligting</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Kitchen</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Baby & Kids</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Home Improvement</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Appliances</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Pet</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Holiday</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Shop by Room</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}" style="color: red;">Sale</a>
+</div>
+</div>
+<!--End Departments-->
+
+    <div>
+        <hr>
+    </div>
+
+
+
+
+    <!--Start Cart-->
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="card border shadow-none">
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="{% static 'imgs/cart-item1.webp' %}" alt="" class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Eidson 10
+                                            Drawer Storage Drawer</a></h5>
+                                    <p class="text-muted mb-0">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star-half text-warning"></i>
+                                    </p>
+                                    <p class="mb-0 mt-1">Color : <span class="fw-medium">White</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Price</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                    class="font-size-16 fw-normal">$65</del></span>$35</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Quantity</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1">1</option>
+                                                <option value="2" selected="">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Total</p>
+                                        <h5>$70</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end card -->
+
+                <div class="card border shadow-none">
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="{% static 'imgs/cart-item2.webp' %}" alt="" class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Comforter
+                                            Set</a></h5>
+                                    <p class="text-muted mb-0">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                    </p>
+                                    <p class="mb-0 mt-1">Color : <span class="fw-medium">Pink</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Price</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                    class="font-size-16 fw-normal">$280</del></span>$240</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Quantity</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1" selected="">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Total</p>
+                                        <h5>$240</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end card -->
+
+                <div class="card border shadow-none">
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-start border-bottom pb-3">
+                            <div class="me-4">
+                                <img src="{% static 'imgs/cart-item3.webp' %}" alt="" class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <div>
+                                    <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">Ainsley 73.6''
+                                            Vegan Leather Sofa</a></h5>
+                                    <p class="text-muted mb-0">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                    </p>
+                                    <p class="mb-0 mt-1">Color : <span class="fw-medium">Brown</span></p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-muted px-1">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Price</p>
+                                        <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del
+                                                    class="font-size-16 fw-normal">$300</del></span>$260</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Quantity</p>
+                                        <div class="d-inline-flex">
+                                            <select class="form-select form-select-sm w-xl">
+                                                <option value="1" selected="">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mt-3">
+                                        <p class="text-muted mb-2">Total</p>
+                                        <h5>$260</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end card -->
+
+                <div class="row my-4">
+
+                    <div class="col-sm-6">
+                        <div class="text-sm-end mt-2 mt-sm-0">
+                            <a href="checkout.html" class="btn mybtn">
+                                <i class="fa-solid fa-cart-shopping"></i> Checkout </a>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row-->
+            </div>
+
+            <div class="col-xl-4">
+                <div class="mt-5 mt-lg-0">
+                    <div class="card border shadow-none">
+                        <div class="card-header bg-transparent border-bottom py-3 px-4">
+                            <h5 class="font-size-16 mb-0">Order Summary <span class="float-end">#MN0124</span></h5>
+                        </div>
+                        <div class="card-body p-4 pt-2">
+
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td>Sub Total :</td>
+                                            <td class="text-end">$ 780</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discount : </td>
+                                            <td class="text-end">- $ 78</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping Charge :</td>
+                                            <td class="text-end">$ 25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estimated Tax : </td>
+                                            <td class="text-end">$ 18.20</td>
+                                        </tr>
+                                        <tr class="bg-light">
+                                            <th>Total :</th>
+                                            <td class="text-end">
+                                                <span class="fw-bold">
+                                                    $ 745.2
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table-responsive -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </div>
+
+
+    <!--End Cart-->
+
+
+
+
+    <!--Start Footer-->
+
+    <!--Start App banner-->
+
+    <div class="mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="#">
+                    <img src="{% static 'imgs/banner-app.webp' %}" alt="Image 1" class="img-fluid">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!--End App Banner-->
+
+
+    <!--Start Subscribe-->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="text-center pt-2">
+                    Be the first to know about our best deals!
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="d-flex w-100 ">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                    <button class="btn mybtn" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Subscripe-->
+
+
+    <footer class="py-5">
+        <div class="container border-top pt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <a href="#" class="mylink">About Wayfair</a><br>
+                    <a href="#" class="mylink">Wayfair Professional</a><br>
+                    <a href="#" class="mylink">Gift Cards</a><br>
+                    <a href="#" class="mylink">Wayfair Credit Cards</a><br>
+                    <a href="#" class="mylink">Wayfair Financing</a><br>
+                    <a href="#" class="mylink">Careers</a><br>
+                    <a href="#" class="mylink">Sell on Wayfair</a><br>
+                    <a href="#" class="mylink">Investor Relation</a><br>
+                    <a href="#" class="mylink">Advertise with Us</a><br>
+                    <a href="#" class="mylink">Locations</a>
+                </div>
+                <div class="col-md-4">
+                    <h4>Customer Service</h4>
+                    <a href="#" class="mylink">My Orders</a><br>
+                    <a href="#" class="mylink">My Account</a><br>
+                    <a href="#" class="mylink">Track My Order</a><br>
+                    <a href="#" class="mylink">Wayfair Accessibilty Statement</a><br>
+                    <a href="#" class="mylink">Return Policy</a><br>
+                    <a href="#" class="mylink">Help Center</a><br>
+                    <a href="#" class="mylink">Product Recalls</a>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <button type="button" class="btn mybtn">Quick Service</button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+                </ul>
+            </div>
+    </footer>
+
+
+    <!--End Footer-->
+
+    <!--JS Files-->
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/myjs.js' %}"></script>
+
+    <!--JS Files-->
+</body>
+
+</html>

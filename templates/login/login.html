@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Log In</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .btn{
+    background-color: var(--main-color);
+    border-radius: 30px;
+  }
+    </style>
+  </head>
+  <body >
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand me-5" href="home.html"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+          <span class="float-end">Secure Login</span>
+        </div>
+       
+    </nav>
+    <hr>
+    <div class="text-center">
+      <div class="container col-6">
+      <h4 class="mb-5 mt-5">Enter your email address to sign in or to create an account</h4>
+      <div class="form-floating mb-3 ">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+        <button type="button" class="btn mybtn mt-5">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-flex justify-content-between py-4 my-4 border-top position-absolute bottom-0 start-50 translate-middle-x">
+    <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+    <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+    </ul>
+</div>
+
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/all.min.js' %}"></script>
+<script src="{% static 'js/myjs.js' %}"></script>
+
+  </body>
+</html>

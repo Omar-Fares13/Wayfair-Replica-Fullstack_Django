@@ -1,0 +1,404 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&family=Rubik:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!--Start topbar-->
+<div class="nav">
+    <div class="container">
+
+      <a class="nav-link float-start" href="#">Home Improvement Deals | Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+
+      <a class="nav-link float-end" href="#">Free Shipping Over $35*</a>
+
+      <a class="nav-link float-end" href="#">Wayfair Professional</a>
+
+      <a class="nav-link float-end" href="{% url 'App' %}">Our App</a>
+
+    </div>
+</div>
+
+<!--End topbar-->
+
+<!--Start Navbar-->
+
+<nav class="navbar navbar-expand-lg pt-0 pb-0 sticky-top">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <a class="nav-link mt-4 disappearing-element" href="#" onclick="openNav()"><i class="fa-solid fa-bars fa-xl"></i></i> Menu</a>
+      <a class="nav-link" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <div class="d-flex justify-content-end">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0 ">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user fa-xl"></i> Account
+          </a> 
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="{% url 'login' %}" class="btn mybtn" type="button">Sign In</a>
+              <a href="{% url 'login' %}" class="nav-link px-auto mx-0">Creat an Account</a>
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> My Account </a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-box-open"></i> My Orders</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list"></i> Lists</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping fa-xl"></i> Cart</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!--End Navbar-->
+
+<!--Start Side Panal-->
+<div id="mySidepanel" class="sidepanel">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="logo" href="{% url 'home' %}"><img src="{% static 'imgs/logo.png' %}" alt="#" width="160px" height="80px"></a>
+
+ <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-chair"></i> Departments</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-tag"></i> sale</a>
+  <hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-user"></i> My Account</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-box-open"></i> My Orders </a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-comment-dots"></i> Review My Purchases</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-clock-rotate-left"></i> Recently Viewed</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-heart"></i> Lists</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-shapes"></i> Design Services</a>
+  <a href="{% url 'shop' %}"><i class="fa-brands fa-unity"></i> 3D Room Planner</a>
+<hr>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-credit-card"></i> Wayfair Credit Cards</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-hand-holding-dollar"></i> Wayfair Financing</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-gift"></i> Gift Card</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-user-tie"></i> Wayfair Professional</a>
+  <a href="{% url 'shop' %}"><i class="fa-solid fa-circle-info"></i> Help & Contact</a>
+  <div class="d-grid gap-2 col-10 mx-auto">
+    <a href="login.html" class="btn btn-primary" type="button">Sign In</a>
+  </div>
+</div>
+<!--End Side Panal-->
+<div><hr></div>
+<!--Start Departments-->
+<div class="nav1 navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-center">
+    <a class="nav-link float-start" href="{% url 'shop' %}">Furniture</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Outdoor</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Bedding & Bath</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Rugs</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Decor & Pillows</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Organization</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">ligting</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Kitchen</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Baby & Kids</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Home Improvement</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Appliances</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Pet</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Holiday</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}">Shop by Room</a>
+    <a class="nav-link float-start" href="{% url 'shop' %}" style="color: red;">Sale</a>
+</div>
+</div>
+<!--End Departments-->
+
+    <div>
+        <hr>
+    </div>
+
+
+    <!--Start Donload The App-->
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <img src="{% static 'imgs/app.png' %}" class="img-fluid" alt="Small Photo">
+                <h1 class="mt-2 mb-4">All Things Home.<br>One Tap Away.</h1>
+                <p><strong>Send a download link to your device</strong></p>
+                <div class="form-floating mt-2 mb-2">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+                <button class="btn mybtn mb-4" type="button">Submit</button>
+                <p style="font-size: small;">I agree to receive a one-time text (sent using an auto dialer) from Wayfair
+                    to my mobile device, with a link to download the Wayfair mobile app. Message and data rates may
+                    apply.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--End Donload The App-->
+
+
+    <!--Start First Banner-->
+
+    <div class="bg-light mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-center mb-4">
+                <h1>Perks of Our App</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="my-auto">Visualize Before You Buy With View in Room</h1>
+                    <p class="my-auto">Want to see that sofa in your home before ordering? Now you can – in 3D! View in
+                        Room lets you zoom in, zoom out, walk around products, and more.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'imgs/app-banner1.webp' %}" class="img-fluid" alt="Photo">
+            </div>
+        </div>
+    </div>
+
+
+    <!--End First Banner-->
+
+    <!--Start Second Banner-->
+
+    <div class="container ">
+        <div class="row app-ban">
+            <div class="col-md-6 d-flex align-items-center">
+                <img src="{% static 'imgs/app-banner2.webp' %}" class="img-fluid" width="400px" height="325px" alt="Photo">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="my-auto">Track your Packages With Day of Delivery</h1>
+                    <p class="my-auto">Wondering when your order will arrive? With Day of Delivery, you can track large
+                        packages in real time to see when they’ll get to your door.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Second Banner-->
+
+
+    <!--Start Third Banner-->
+
+    <div class="bg-light ">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="my-auto">Get Instant Updates with Push Notifications</h1>
+                    <p class="my-auto">Tap into savings! Our personality-packed notifications grant you access to
+                        exclusive sales, handpicked products, and so much more.</p>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <img src="{% static 'imgs/app-banner3.webp' %}" class="img-fluid mx-auto d-block" alt="Photo">
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Third Banner-->
+
+
+
+
+    <!--Start FAQ-->
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <h4 class="text-center mb-4">How do I download the Wayfair App?</h4>
+        <p class="text-center mb-4">Click the link below to the App Store or Google Play to download the Wayfair App.
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <p><strong>Send a download link to your device</strong></p>
+                <div class="form-floating mt-2 mb-2">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+                <button class="btn mybtn mb-4" type="button">Submit</button>
+                <p style="font-size: small;">I agree to receive a one-time text (sent using an auto dialer) from Wayfair
+                    to my mobile device, with a link to download the Wayfair mobile app. Message and data rates may
+                    apply.</p>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="question1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            How much does the Wayfair App cost?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="question1"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The Wayfair App is free!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="question2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            How do I see items in my room on Wayfair?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="question2"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Use the View In Room Feature on the Wayfair App to see items in your room.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="question3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            How do I shop on Wayfair?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="question3"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Use the Wayfair App or go to wayfair.com to shop at Wayfair.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--End FAQ-->
+
+
+
+
+    <!--Start Footer-->
+
+    <!--Start App banner-->
+
+    <div class="mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="#">
+                    <img src="{% static 'imgs/banner-app.webp' %}" alt="Image 1" class="img-fluid">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!--End App Banner-->
+
+
+    <!--Start Subscribe-->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="text-center pt-2">
+                    Be the first to know about our best deals!
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="d-flex w-100 ">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                    <button class="btn mybtn" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Subscripe-->
+
+
+    <footer class="py-5">
+        <div class="container border-top pt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <a href="#" class="mylink">About Wayfair</a><br>
+                    <a href="#" class="mylink">Wayfair Professional</a><br>
+                    <a href="#" class="mylink">Gift Cards</a><br>
+                    <a href="#" class="mylink">Wayfair Credit Cards</a><br>
+                    <a href="#" class="mylink">Wayfair Financing</a><br>
+                    <a href="#" class="mylink">Careers</a><br>
+                    <a href="#" class="mylink">Sell on Wayfair</a><br>
+                    <a href="#" class="mylink">Investor Relation</a><br>
+                    <a href="#" class="mylink">Advertise with Us</a><br>
+                    <a href="#" class="mylink">Locations</a>
+                </div>
+                <div class="col-md-4">
+                    <h4>Customer Service</h4>
+                    <a href="#" class="mylink">My Orders</a><br>
+                    <a href="#" class="mylink">My Account</a><br>
+                    <a href="#" class="mylink">Track My Order</a><br>
+                    <a href="#" class="mylink">Wayfair Accessibilty Statement</a><br>
+                    <a href="#" class="mylink">Return Policy</a><br>
+                    <a href="#" class="mylink">Help Center</a><br>
+                    <a href="#" class="mylink">Product Recalls</a>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <button type="button" class="btn mybtn">Quick Service</button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+                </ul>
+            </div>
+    </footer>
+
+
+    <!--End Footer-->
+
+    <!--JS Files-->
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/myjs.js' %}"></script>
+
+    <!--JS Files-->
+</body>
+
+</html>
